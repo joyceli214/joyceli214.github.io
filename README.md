@@ -1,56 +1,65 @@
-# Joyce Li Portfolio
+# My Portfolio
 
-Professional portfolio website built with React + Vite + TypeScript using a liquid-glass visual system.
+This repository is my personal portfolio website.
 
-## Stack
+I use it to showcase selected projects, experience, and contact information in a single place.  
+It is built to be easy to maintain, with content centralized and deployment automated.
+
+## Tech Stack
 
 - React 19 + TypeScript + Vite
-- Tailwind CSS with CSS variable design tokens
-- Local reusable components inspired by Magic UI and React Bits interaction patterns
+- Tailwind CSS with design tokens (CSS variables)
+- Reusable UI components inspired by Magic UI and React Bits patterns
 - Lucide icons
 - GitHub Actions deployment to GitHub Pages
 
-## Local development
+## Running Locally
+
+### 1. Install dependencies
 
 ```bash
 npm install
+```
+
+### 2. Start the local dev server
+
+```bash
 npm run dev
 ```
 
-## Quality checks
+## Useful Commands
+
+Run code quality checks:
 
 ```bash
 npm run lint
-npm run build
 npm run format:check
+npm run build
 ```
 
-## Deploy to GitHub Pages (user site)
+## Where to Edit Content
 
-This repo is configured for a user site (`https://<username>.github.io`) with `base: '/'`.
+Most portfolio content lives in:
 
-1. Push this repo to `<username>/<username>.github.io`.
-2. In GitHub repo settings, open `Pages` and set source to `GitHub Actions`.
-3. Ensure your default branch is `main` (or adjust workflow trigger).
-4. Push to `main` and the workflow in `.github/workflows/deploy.yml` will publish automatically.
+`src/data/portfolio.ts`
 
-## If this is a project site instead of user site
+Update this file to change:
 
-If repo is `https://github.com/<username>/<repo>` and URL should be `https://<username>.github.io/<repo>`:
+- Intro and bio text
+- Experience
+- Projects
+- Contact links
 
-1. Update `vite.config.ts`:
+## Deployment (GitHub Pages)
 
-```ts
-export default defineConfig({
-  base: '/<repo>/',
-  plugins: [react()],
-})
-```
+I set this project up to deploy automatically to GitHub Pages using GitHub Actions.
 
-2. Keep the same GitHub Actions workflow.
+What I configured:
 
-## Content source
+- Deployment workflow: `.github/workflows/deploy.yml`
+- Trigger branch: `main`
+- Vite base path: `base: '/'` for a GitHub user site deployment
 
-All portfolio content is centralized in `src/data/portfolio.ts`.
-Update this file to change copy, experience, projects, and contact links.
+This means every push to `main` triggers a new production build and publishes the latest version of the portfolio.
 
+If I ever move this to a project site (`<username>.github.io/<repo>`), the main change needed is updating `vite.config.ts` to `base: '/<repo>/'`.
