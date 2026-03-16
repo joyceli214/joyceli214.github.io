@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #edf3ff;
+  --text: #09090b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(45rem 32rem at 8% 0%, rgba(59, 130, 246, 0.14), transparent),
+    radial-gradient(40rem 30rem at 95% 12%, rgba(103, 232, 249, 0.2), transparent),
+    linear-gradient(130deg, #f8fbff 0%, #edf3ff 48%, #f8fafc 100%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Archivo', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.hero-shell {
+  position: relative;
+}
+
+.hero-shell::after {
+  content: '';
+  position: absolute;
+  inset: 1.5rem;
+  border-radius: 1.25rem;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+.liquid-orb {
+  position: fixed;
+  z-index: 0;
+  border-radius: 9999px;
+  filter: blur(48px);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.liquid-orb-a {
+  width: 22rem;
+  height: 22rem;
+  top: 8rem;
+  right: -7rem;
+  background: linear-gradient(145deg, rgba(56, 189, 248, 0.45), rgba(59, 130, 246, 0.28));
+  animation: driftA 18s ease-in-out infinite;
+}
+
+.liquid-orb-b {
+  width: 18rem;
+  height: 18rem;
+  bottom: 7rem;
+  left: -5rem;
+  background: linear-gradient(145deg, rgba(59, 130, 246, 0.35), rgba(129, 140, 248, 0.3));
+  animation: driftB 20s ease-in-out infinite;
+}
+
+@keyframes driftA {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-1.1rem, 1.7rem, 0) scale(1.08);
+  }
+}
+
+@keyframes driftB {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(1.25rem, -1.2rem, 0) scale(1.06);
+  }
+}
+
+@media (max-width: 768px) {
+  .liquid-orb-a {
+    width: 14rem;
+    height: 14rem;
+    right: -5rem;
+    top: 13rem;
+  }
+
+  .liquid-orb-b {
+    width: 12rem;
+    height: 12rem;
+    left: -4rem;
+    bottom: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .liquid-orb {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
