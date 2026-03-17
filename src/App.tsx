@@ -294,18 +294,6 @@ function App() {
                     </GlowButton>
                   ))}
                 </div>
-                <p className="mt-6 text-xs text-slate-600">
-                  Illustrations by{' '}
-                  <a
-                    href="https://undraw.co/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="font-medium text-slate-700 underline decoration-slate-400 underline-offset-2 hover:text-slate-900"
-                  >
-                    unDraw
-                  </a>
-                  .
-                </p>
               </div>
             </GlassCard>
           </motion.div>

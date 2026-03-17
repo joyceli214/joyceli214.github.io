@@ -63,3 +63,7 @@ What I configured:
 This means every push to `main` triggers a new production build and publishes the latest version of the portfolio.
 
 If I ever move this to a project site (`<username>.github.io/<repo>`), the main change needed is updating `vite.config.ts` to `base: '/<repo>/'`.
+
+## Credits
+
+- Illustrations by [unDraw](https://undraw.co/)
