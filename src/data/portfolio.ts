@@ -1,14 +1,17 @@
 import type { PortfolioData } from '../types/portfolio'
+import pelvisenseImage from '../assets/pelvisense.webp'
+import tootorAvatarImage from '../assets/Tootor AI Avatar.png'
+import adminDashboardImage from '../assets/admin_dashboard.webp'
 
 export const portfolioData: PortfolioData = {
   profile: {
     name: 'Joyce Li',
-    role: 'Senior Full Stack Engineer',
+    role: 'Software Engineer',
     tagline: 'I build AI-native products that still meet enterprise reliability standards.',
     location: 'Toronto, ON, Canada',
     availability: 'Open to senior full-stack and platform engineering roles.',
     summary:
-      'Full stack engineer focused on React and Node.js, with work centered on product delivery and platform reliability. Recent projects include AI orchestration, secure APIs, and high-availability services.',
+      'Software engineer focused on React and Node.js, with work centered on product delivery and platform reliability. Recent projects include AI orchestration, secure APIs, and high-availability services.',
     contacts: [
       {
         label: 'Email',
@@ -20,30 +23,8 @@ export const portfolioData: PortfolioData = {
         href: 'https://www.linkedin.com/in/joyce-li-ca',
         value: 'linkedin.com/in/joyce-li-ca',
       },
-      {
-        label: 'Phone',
-        href: 'tel:+14162680598',
-        value: '+1 (416) 268-0598',
-      },
     ],
   },
-  impactStats: [
-    {
-      label: 'Global Rollout',
-      value: '5,000+',
-      context: 'locations supported through cloud voice infrastructure',
-    },
-    {
-      label: 'SSO Migration',
-      value: '200,000+',
-      context: 'users moved to Keycloak-based authentication',
-    },
-    {
-      label: 'Healthcare Automation',
-      value: '30+',
-      context: 'clinical branches served by automated inquiry flows',
-    },
-  ],
   experience: [
     {
       company: 'Shift Technologies Canada Inc.',
@@ -96,48 +77,128 @@ export const portfolioData: PortfolioData = {
   ],
   projects: [
     {
-      name: 'Tootor AI Tutor',
+      name: 'PelviSense Tracker',
       description:
-        'Integrated LLM workflows with lip-sync interaction to create a voice-responsive tutoring avatar.',
-      impact: 'Explored more accessible and conversational learning experiences.',
-      technologies: ['LLMs', 'Voice Interaction', 'Avatar Rendering'],
-      status: 'Academic',
+        'Mobile companion app for PelviSense training, progress tracking, and daily session support.',
+      highlights: [
+        'Implemented Flutter flows for guided sessions, device data capture, and progress history.',
+        'Designed a clean mobile UX so day-to-day logging stays quick, clear, and consistent.',
+      ],
+      images: [
+        {
+          src: pelvisenseImage,
+          alt: 'PelviSense mobile app interface',
+        },
+      ],
+      links: [
+        {
+          label: 'App Store',
+          href: 'https://apps.apple.com/hk/app/pelvisense-tracker/id6550893131',
+          type: 'website',
+        },
+        {
+          label: 'GitHub',
+          href: 'https://github.com/joyceli214/emg_sensor',
+          type: 'github',
+        },
+      ],
+      technologies: ['Flutter', 'Dart', 'Android', 'iOS'],
     },
     {
-      name: 'PolyU PelviSense',
+      name: 'Tootor AI Avatar',
       description:
-        'Developed a Flutter app with BLE support for live medical data visualization.',
-      impact:
-        'Turned raw sensor signals into interfaces that are easier to interpret quickly.',
-      technologies: ['Flutter', 'BLE', 'Mobile UI'],
-      status: 'Academic',
+        'AI avatar tutoring interface with real-time voice interaction and conversational guidance.',
+      highlights: [
+        'Integrated speech input, LLM responses, and avatar behavior into a unified live chat flow.',
+        'Improved usability with responsive turn-taking and natural voice-first interaction design.',
+      ],
+      images: [
+        {
+          src: tootorAvatarImage,
+          alt: 'Tootor AI avatar interface',
+        },
+      ],
+      links: [
+        {
+          label: 'Website',
+          href: 'https://tootor.ca',
+          type: 'website',
+        },
+        {
+          label: 'GitHub',
+          href: 'https://github.com/joyceli214/talking-avatar-with-ai',
+          type: 'github',
+        },
+      ],
+      technologies: ['React', 'TypeScript', 'Node.js', 'JavaScript', 'C++'],
     },
     {
-      name: 'Enterprise Voice AI Platform',
+      name: 'Vintage Audio Shop Admin Portal',
       description:
-        'Led implementation of production voice AI flows across orchestration services, secure APIs, and cloud infrastructure.',
-      impact:
-        'Supported real-world operations across fitness, travel, and healthcare contexts.',
-      technologies: ['NestJS', 'AWS', 'Twilio', 'Stripe', 'Microservices'],
-      status: 'Private',
+        'Web admin dashboard for catalog management, order workflows, and day-to-day shop operations.',
+      highlights: [
+        'Built React and Go interfaces for inventory updates, order handling, and admin operations.',
+        'Dashboard preview image is intentionally blurred to protect customer privacy.',
+      ],
+      images: [
+        {
+          src: adminDashboardImage,
+          alt: 'Blurred admin dashboard screenshot for privacy protection',
+        },
+      ],
+      links: [
+        {
+          label: 'Website',
+          href: 'https://admin-humphreys.up.railway.app/',
+          type: 'website',
+        },
+        {
+          label: 'GitHub',
+          href: 'https://github.com/joyceli214/humphreys',
+          type: 'github',
+        },
+      ],
+      technologies: ['Go', 'React', 'Vite', 'PostgreSQL'],
     },
   ],
   skills: [
     {
       title: 'Frontend',
-      items: ['React.js', 'Redux', 'TypeScript', 'HTML5', 'CSS'],
+      items: [
+        'React',
+        'TypeScript',
+        'JavaScript',
+        'Vite',
+        'Tailwind CSS',
+        'Astro',
+        'React Router',
+        'Three.js',
+      ],
     },
     {
       title: 'Backend & APIs',
-      items: ['Node.js', 'NestJS', 'Java', 'Spring Boot', 'REST', 'JSON', 'OAuth 2.0', 'Keycloak'],
+      items: [
+        'Node.js',
+        'Express',
+        'NestJS',
+        'Go',
+        'Gin',
+        'Java',
+        'Spring Boot',
+        'REST APIs',
+        'JWT Auth',
+        'OpenAPI',
+        'OAuth 2.0',
+        'Keycloak',
+      ],
     },
     {
-      title: 'Cloud & Data',
-      items: ['AWS EC2/S3', 'Azure', 'MongoDB', 'RDBMS', 'ElasticSearch', 'Firebase'],
+      title: 'Data & Mobile',
+      items: ['PostgreSQL', 'MongoDB', 'Firebase', 'Flutter', 'Dart', 'Android', 'iOS', 'BLE'],
     },
     {
       title: 'DevOps & Tooling',
-      items: ['Docker', 'CI/CD', 'Terraform', 'JUnit', 'Mockito', 'SwaggerHub', 'Git'],
+      items: ['Git', 'Docker', 'CI/CD', 'Vitest', 'Testing Library', 'JUnit', 'Mockito', 'ESLint'],
     },
   ],
   education: [

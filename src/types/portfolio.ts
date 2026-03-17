@@ -26,9 +26,17 @@ export interface ExperienceItem {
 export interface ProjectItem {
   name: string
   description: string
-  impact: string
+  highlights: [string, string]
+  images: {
+    src: string
+    alt: string
+  }[]
+  links: {
+    label: string
+    href: string
+    type: 'github' | 'website'
+  }[]
   technologies: string[]
-  status: 'Private' | 'Academic'
 }
 
 export interface SkillGroup {
@@ -42,15 +50,8 @@ export interface EducationItem {
   details: string
 }
 
-export interface ImpactStat {
-  label: string
-  value: string
-  context: string
-}
-
 export interface PortfolioData {
   profile: Profile
-  impactStats: ImpactStat[]
   experience: ExperienceItem[]
   projects: ProjectItem[]
   skills: SkillGroup[]
